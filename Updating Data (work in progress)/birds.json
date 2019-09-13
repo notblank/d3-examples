@@ -1,0 +1,50 @@
+{
+  "description": "Birds of Antarctica, grouped by family",
+  "source": "https://en.wikipedia.org/wiki/List_of_birds_of_Antarctica",
+  "birds": [
+    {
+      "family": "Albatrosses",
+      "num_members": 10
+    },
+    {
+      "family": "Cormorants",
+      "num_members": 5
+    },
+    {
+      "family": "Diving petrels",
+      "num_members": 2
+    },
+    {
+      "family": "Ducks, geese and swans",
+      "num_members": 1
+    },
+    {
+      "family": "Gulls",
+      "num_members": 1
+    },
+    {
+      "family": "Penguins",
+      "num_members": 7
+    },
+    {
+      "family": "Shearwaters and petrels",
+      "num_members": 15
+    },
+    {
+      "family": "Sheathbills",
+      "num_members": 1
+    },
+    {
+      "family": "Skuas and jaegers",
+      "num_members": 2
+    },
+    {
+      "family": "Storm petrels",
+      "num_members": 3
+    },
+    {
+      "family": "Terns",
+      "num_members": 2
+    }
+  ]
+}

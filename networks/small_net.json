@@ -1,0 +1,17 @@
+{
+  "nodes": [
+    {"name": "Pedrox"},
+    {"name": "Cheverax"},
+    {"name": "Panax"},
+    {"name": "Rulfo"},
+    {"name": "Maria"}
+  ],
+
+  "links": [
+    {"source": "Pedrox", "target": "Panax"},
+    {"source": "Cheverax", "target": "Panax"},
+    {"source": "Rulfo", "target": "Maria"},
+    {"source": "Maria", "target": "Cheverax"},
+    {"source": "Rulfo", "target": "Panax"}
+  ]
+}

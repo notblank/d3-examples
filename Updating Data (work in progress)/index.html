@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+  </head>
+  <body>
+
+    <div id="container">
+      Birds of Antarctica:
+    </div>
+
+    <div>
+      family:<input type="text" id="family" >
+      num_members:<input type="number" id="num_members" >
+      <button id="addBirds">Add Birds</button>
+    </div>
+
+    <svg id="barPlot" width='600' height='320'>
+      <g id='body' style='transform:translate(150px, 0px)'></g>
+      <g id="xAxis"></g>
+      <g id="yAxis"></g>
+    </svg>
+
+  </body>
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script type="text/javascript" src='./code.js'></script>
+
+</html>

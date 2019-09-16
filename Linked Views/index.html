@@ -9,15 +9,32 @@
         display: none;
         background-color: white;
       }
+
+      svg {
+        border:1px solid black;
+        padding: 10px;
+        background-color: white;
+      }
+
+      .line {
+        fill: none;
+        /* stroke: grey; */
+      }
     </style>
 
   </head>
   <body>
 
-    <svg id="container" width='600' height='320'>
-      <g id='body' style='transform:translate(150px, 0px)'></g>
-      <g id="xAxis"></g>
-      <g id="yAxis"></g>
+    <svg id="barchart" width='600' height='400'>
+      <g class='body' style='transform:translate(150px, 0px)'></g>
+      <g class="xAxis"></g>
+      <g class="yAxis"></g>
+    </svg>
+
+    <svg id="timeline" width='600' height='400'>
+      <g class='body' style='transform:translate(150px, 0px)'></g>
+      <g class="xAxis"></g>
+      <g class="yAxis"></g>
     </svg>
 
     <div id="tooltip">Extra Info:</div>

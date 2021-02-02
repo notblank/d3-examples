@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style media="screen">
+      #tooltip {
+        position: absolute;
+        border:1px solid black;
+        padding: 10px;
+        display: none;
+        background-color: white;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <svg id="container" width='600' height='320'>
+      <g id='body' style='transform:translate(150px, 0px)'></g>
+    </svg>
+
+    <div id="tooltip">Extra Info:</div>
+
+  </body>
+
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script type="text/javascript" src='./code.js'></script>
+
+</html>

@@ -32,7 +32,7 @@ function isSelected(coords, x, y){
       y0 = coords[0][1],
       x1 = coords[1][0],
       y1 = coords[1][1];
-
+    //true if [x, y] is inside the brush square
   return(x0 <= x && x <= x1 && y0 <= y && y <= y1);
 }
 

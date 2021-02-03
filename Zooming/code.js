@@ -6,13 +6,13 @@ d3.csv("./sat.csv")
     showData(sat);
   });
 
-function isSelected(coords, x, y) {
-  let x0 = coords[0][0],
-    y0 = coords[0][1],
-    x1 = coords[1][0],
-    y1 = coords[1][1];
+function is_inside(top_lims, bot_lims, x, y) {
+  let x0 = top_lims[0],
+    y0 = top_lims[1],
+    x1 = bot_lims[0],
+    y1 = bot_lims[1];
 
-  return (x0 <= x && x <= x1 && y0 <= y && y <= y1);
+  return (x0 <= x && y0 <= y && x <= x1 &&  y <= y1);
 }
 
 function showData(sat) {
@@ -21,8 +21,6 @@ function showData(sat) {
 
   let maxParticipation = d3.max(sat, d => +d.Participation);
   let maxTotal = d3.max(sat, d => +d.Total);
-
-  console.log(maxTotal, maxParticipation);
 
   let partScale = d3.scaleLinear()
     .domain([0, maxParticipation])
@@ -38,21 +36,27 @@ function showData(sat) {
 
   let zoom = d3.zoom();
   zoom.on('zoom', function() {
-    let t = d3.event.transform;
-    let newXScale = t.rescaleX(partScale);
-    let newYScale = t.rescaleY(totalScale);
+      let t = d3.event.transform;
+      let newXScale = t.rescaleX(partScale);
+      let newYScale = t.rescaleY(totalScale);
 
-    xAxis.scale(newXScale);
-    xAxisGroup.call(xAxis);
+      // new scale and redraw
+      xAxis.scale(newXScale);
+      xAxisGroup.call(xAxis);
 
-    yAxis.scale(newYScale);
-    yAxisGroup.call(yAxis);
+      yAxis.scale(newYScale);
+      yAxisGroup.call(yAxis);
 
-    join.merge(newElements)
-      .attr('cx', d => newXScale(+d.Participation))
-      .attr('cy', d => newYScale(+d.Total));
+      //let top_lims = [newXScale(0), newYScale(0)];
+      //let bot_lims = [newXScale(maxParticipation), newYScale(maxTotal)];
+      
+      join.merge(newElements)
+          .attr('cx', d => newXScale(+d.Participation))
+          .attr('cy', d => newYScale(+d.Total));
+
   });
 
+    // zoom listens to actions inside container
   container.call(zoom);
 
   let xAxisGroup = d3.select('#xAxis')

@@ -20,13 +20,13 @@ function removeSubject(){
 function showData(){
   let join = container.selectAll('div')
                       .data(persons);
-  // Elelments without a DOM element - Enter:
+  // data without a DOM element - Enter:
   join.enter()
       .append('div')
       .text(d => d.Name + '-NEW');
-  // Remove elemets on the Exit:
+  // Remove elemets not associated with data (persons.pop) - Exit:
   join.exit().remove();
-  // Updated data:
+  // Updated data-elements:
   join.text(d => d.Name + '-OLD...');
 
 }
